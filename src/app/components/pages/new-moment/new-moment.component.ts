@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Moment } from 'src/app/Moment';
+import { MomentService } from 'src/app/services/moment.service';
+
 @Component({
   selector: 'app-new-moment',
   templateUrl: './new-moment.component.html',
@@ -10,7 +12,7 @@ export class NewMomentComponent implements OnInit {
 btnText="Compartilhar!"
 
 
-constructor(){}
+constructor(private momentService: MomentService){}
 
 ngOnInit(): void { 
 }
@@ -29,7 +31,7 @@ async createHandler(moment: Moment){
 
   //A fazer
 
-  //enviar para o service
+  await this.momentService.createMoment(formData).subscribe()
 
   //exibir msg
 
