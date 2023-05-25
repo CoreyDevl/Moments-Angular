@@ -11,8 +11,8 @@ nav{
     align-items: center;
 }
 
-.brand img{
-    width: 40px;
+.icon{
+    font-size: 40px;
     margin-right: 0.6em;
 }
 
