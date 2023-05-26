@@ -35,13 +35,11 @@ async createHandler(moment: Moment){
     formData.append("image", moment.image)
   } 
 
-  await this.momentService.createMoment(formData).subscribe()
-
-  this.messagesService.add("Momento adicionado com sucesso!")
-
-  this.router.navigate(['/'])
-
-}
-
-
+  this.momentService.createMoment(formData).subscribe({
+      next: () =>{
+        this.messagesService.add("Momento adicionado com sucesso!");
+        this.router.navigate(['/'])
+      }
+    }); 
+} 
 }
