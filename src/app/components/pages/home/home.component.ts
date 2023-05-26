@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
 
   baseApiUrl = environment.baseApiUrl
 
-  //a fazer barra de pesquisa
+  faSearch = faSearch;
+  searchTerm: string = "";
 
   constructor(private momentService: MomentService) {}
 
@@ -31,4 +32,9 @@ export class HomeComponent implements OnInit {
       this.moments = data;
     })
   }
+
+search(event: any):void {
+
+}
+
 }
