@@ -9,7 +9,9 @@ import { Moment } from 'src/app/Moment';
 })
 export class MomentsFormComponent implements OnInit{
 @Input() btnText!: string
+@Input() momentData: Moment | null = null;
 @Output() onSubmit = new EventEmitter<Moment>()
+ 
 momentForm!: FormGroup;
 
 constructor () {}
